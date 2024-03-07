@@ -15,6 +15,14 @@ class Penerbit extends Model
 
     public $timestamps = false;
 
+    protected $fillable = [
+        'kode',
+        'nama',
+        'alamat',
+        'kota',
+        'telepon',
+    ];
+
     public function buku()
     {
         return $this->hasMany(Buku::class, 'penerbit_id', 'id');
