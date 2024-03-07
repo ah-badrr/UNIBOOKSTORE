@@ -19,7 +19,6 @@
                         <table class="table table-hover">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>#</th>
                                     <th>Judul Buku</th>
                                     <th>Nama Penerbit</th>
                                 </tr>
@@ -28,7 +27,6 @@
                                 @if ($buku->count() != null)
                                     @foreach ($buku as $b)
                                         <tr>
-                                            <td>{{ ++$no }}</td>
                                             <td>{{ $b->nama_buku }}</td>
                                             <td>{{ $b->penerbit->nama }}</td>
                                         </tr>

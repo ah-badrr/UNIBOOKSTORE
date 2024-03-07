@@ -34,14 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', function () {
         $buku = Buku::all();
         $penerbit = Penerbit::all();
-        
+
         return view('admin', compact('buku', 'penerbit'));
     })->name('admin');
 
     Route::get('/pengadaan', function () {
-        $buku = Buku::orderBy('stok', 'asc')->paginate(10);
-        $no = 5 * ($buku->currentPage() - 1);
-        return view('pengadaan', compact('buku','no'));
+        $buku = Buku::orderBy('stok', 'asc')->limit(1)->get();
+        return view('pengadaan', compact('buku'));
     })->name('pengadaan');
 });
 
