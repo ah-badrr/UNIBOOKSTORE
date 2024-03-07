@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dash', function () {
-    return view('master.dash');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
