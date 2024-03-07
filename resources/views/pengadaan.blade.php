@@ -1,4 +1,8 @@
 @extends('master.app')
+@section('breadcrumb')
+    <li><a href="{{ route('dashboard') }}">Home <span class="mx-1">></span></a></li>
+    <li><a> Pengadaan </a></li>
+@endsection
 @section('header')
     <h2 style="width: max-content">Pengadaan Stok Buku</h2>
 @endsection
@@ -8,15 +12,6 @@
             <div class="white_shd full margin_bottom_30">
                 <div class="full graph_head">
                     <div class="float-right heading1 margin_0">
-                        <form class="float-end" action="{{ route('dashboard') }}" method="get">
-                            <div class="input-group">
-                                <input type="search" value="{{ old('search') }}" name="search"
-                                    class="rounded form-control me-1" placeholder="Search...">
-                                <button class="rounded btn btn-success" type="submit" id="button-addon2">
-                                    <i class="fa fa-search"></i> Cari
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 </div>
                 <div class="table_section padding_infor_info">

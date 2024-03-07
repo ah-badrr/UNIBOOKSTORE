@@ -85,6 +85,9 @@ class PenerbitController extends Controller
         $update->telepon = $request->telepon;
 
         if (!$update->isDirty()) {
+            Alert::success('Maaf', 'Data tidak di Update');
+            return redirect()->route('penerbit.index');
+        } else {
             $rules = [
                 'kode' => 'required|min:4|max:20',
                 'nama' => 'required|min:3|max:20',
@@ -92,27 +95,18 @@ class PenerbitController extends Controller
                 'kota' => 'required|min:3|max:100',
                 'telepon' => 'required|min:3|max:12',
             ];
-        } else {
-            $rules = [
-                'kode' => 'required|min:4|max:20|unique:penerbit,kode',
-                'nama' => 'required|min:3|max:20|unique:penerbit,nama',
-                'alamat' => 'required|min:3',
-                'kota' => 'required|min:3|max:100',
-                'telepon' => 'required|min:3|max:12|unique:penerbit,telepon',
-            ];
+            $this->validate($request, $rules);
+
+            $update->kode = $request->kode;
+            $update->nama = $request->nama;
+            $update->alamat = $request->alamat;
+            $update->kota = $request->kota;
+            $update->telepon = $request->telepon;
+
+            $update->save();
+            Alert::success('Alhamdulillah', 'Data Berhasil di Update');
+            return redirect()->route('penerbit.index');
         }
-
-        $this->validate($request, $rules);
-
-        $update->kode = $request->kode;
-        $update->nama = $request->nama;
-        $update->alamat = $request->alamat;
-        $update->kota = $request->kota;
-        $update->telepon = $request->telepon;
-
-        $update->save();
-
-        return redirect()->route('penerbit.index');
     }
 
     /**
@@ -127,7 +121,7 @@ class PenerbitController extends Controller
             $penerbit->delete();
             Alert::success('Alhamdulillah', 'Data Berhasil di Hapus');
         } else {
-            Alert::warning('Afwan Akhi', 'Hapus data buku yang terkait dengan penerbit ini dahulu');
+            Alert::warning('Afwan', 'Hapus data buku yang terkait dengan penerbit ini dahulu');
         }
 
         return redirect()->route('penerbit.index');
