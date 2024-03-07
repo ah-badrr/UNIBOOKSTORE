@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->text('alamat');
             $table->string('kota');
-            $table->bigInteger('telepon');
+            $table->string('telepon');
             $table->timestamps();
         });
     }
