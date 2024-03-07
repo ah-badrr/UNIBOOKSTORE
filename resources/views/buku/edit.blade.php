@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="form-group">
-                            <label for="nama_buku" class="form-label">nama_buku <span
+                            <label for="nama_buku" class="form-label">Nama Buku <span
                                     class="text-danger small">*</span></label>
                             <input id="nama_buku" type="text"
                                 class="form-control @error('nama_buku') is-invalid @enderror" value="{{ $buku->nama_buku }}"
