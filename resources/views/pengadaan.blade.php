@@ -22,7 +22,6 @@
                                     <th>#</th>
                                     <th>Judul Buku</th>
                                     <th>Nama Penerbit</th>
-                                    <th>Stok</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,7 +31,6 @@
                                             <td>{{ ++$no }}</td>
                                             <td>{{ $b->nama_buku }}</td>
                                             <td>{{ $b->penerbit->nama }}</td>
-                                            <td>{{ $b->stok }}</td>
                                         </tr>
                                     @endforeach
                                 @else
