@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nama_buku');
             $table->integer('harga');
             $table->integer('stok');
-            $table->unsignedBigInteger('penerbit');
-            $table->foreign('penerbit')->references('id')->on('penerbit');
+            $table->unsignedBigInteger('penerbit_id');
+            $table->foreign('penerbit_id')->references('id')->on('penerbit');
             $table->timestamps();
         });
     }
