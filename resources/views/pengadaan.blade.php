@@ -28,7 +28,7 @@
                                     @foreach ($buku as $b)
                                         <tr>
                                             <td>{{ $b->nama_buku }}</td>
-                                            <td>{{ $b->penerbit->nama }}</td>
+                                            <td>{{ $b->nerbit->nama }}</td>
                                         </tr>
                                     @endforeach
                                 @else

@@ -114,7 +114,7 @@ class PenerbitController extends Controller
      */
     public function destroy($id)
     {
-        $buku = Buku::where('penerbit_id', '=', $id)->count();
+        $buku = Buku::where('penerbit', '=', $id)->count();
         $penerbit = Penerbit::find($id);
 
         if ($buku == 0) {

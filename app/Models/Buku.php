@@ -20,11 +20,11 @@ class Buku extends Model
         'nama_buku',
         'harga',
         'stok',
-        'penerbit_id',
+        'penerbit',
     ];
 
-    public function penerbit()
+    public function nerbit()
     {
-        return $this->belongsTo(Penerbit::class, 'penerbit_id', 'id');
+        return $this->belongsTo(Penerbit::class, 'penerbit', 'id');
     }
 }

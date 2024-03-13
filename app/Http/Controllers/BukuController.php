@@ -55,7 +55,7 @@ class BukuController extends Controller
             'kategori' => $request->kategori,
             'harga' => $request->harga,
             'stok' => $request->stok,
-            'penerbit_id' => $request->penerbit,
+            'penerbit' => $request->penerbit,
         ]);
 
         return redirect()->route('buku.index');
@@ -107,7 +107,7 @@ class BukuController extends Controller
         $update->kategori = $request->kategori;
         $update->harga = $request->harga;
         $update->stok = $request->stok;
-        $update->penerbit_id = $request->penerbit;
+        $update->penerbit = $request->penerbit;
 
         $update->save();
 
