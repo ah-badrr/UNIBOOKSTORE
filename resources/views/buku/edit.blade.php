@@ -84,7 +84,7 @@
                             <select name="penerbit" id="penerbit"
                                 class="custom-select mb-2 @error('penerbit') is-invalid @enderror">
                                 @foreach ($penerbit as $p)
-                                    <option value="{{ $p->id }}" {{ $p->id == $buku->penerbit_id ? 'selected' : '' }}>
+                                    <option value="{{ $p->id }}" {{ $p->id == $buku->penerbit ? 'selected' : '' }}>
                                         {{ $p->nama }}
                                     </option>
                                 @endforeach
